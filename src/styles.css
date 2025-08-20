@@ -1,0 +1,32 @@
+:root{
+--bg:#0b0f14; --panel:#111827; --panel-2:#0f172a; --ink:#e5e7eb; --muted:#93a0b0; --brand:#4f46e5; --accent:#22d3ee; --border:#1f2937; --hover:#1b2230;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;background:linear-gradient(180deg,var(--bg),#0d131b 40%, #0a0f16);color:var(--ink);font:14px/1.4 system-ui, -apple-system, Segoe UI, Inter, Roboto, Ubuntu, "Helvetica Neue", Arial}
+.shell{display:grid;grid-template-rows:auto auto 1fr auto;min-height:100%}
+header{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--panel),var(--panel-2));position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800}
+.title-input{background:transparent;border:none;color:var(--ink);font-weight:700;font-size:14px;border-left:1px solid var(--border);padding-left:12px;width:240px}
+.title-input:focus{outline:none}
+.pill{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#0c111a;color:var(--muted)}
+.btn{border:1px solid var(--border);background:#0e1522;color:var(--ink);padding:8px 10px;border-radius:10px;cursor:pointer}
+.btn:hover{background:var(--hover)}
+.toolbar{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;background:#0d1420;border-bottom:1px solid var(--border);position:sticky;top:52px;z-index:9}
+.group{display:flex;gap:6px;padding:6px;background:#0c111a;border:1px solid var(--border);border-radius:12px}
+.spacer{flex:1}
+#editor-wrap{display:grid;justify-content:center;padding:22px}
+.paper{width:840px;min-height:1120px;background:white;color:#0c0c0e;border-radius:12px;border:1px solid #dfe3ea;box-shadow:0 10px 40px rgba(0,0,0,.35);padding:72px 72px}
+.paper .ql-container.ql-snow{border:none}
+.ql-toolbar.ql-snow{border:1px solid #dfe3ea;border-radius:8px;margin-bottom:10px}
+
+
+/* zoom support */
+.scaled{transform-origin:top center}
+
+
+@media print{
+header,.toolbar,.statusbar{display:none!important}
+#editor-wrap{padding:0}
+.paper{box-shadow:none;border:none;width:auto;padding:0;min-height:auto}
+}
